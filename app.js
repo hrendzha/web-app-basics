@@ -2,6 +2,8 @@ const express = require('express');
 const exhbs = require('express-handlebars');
 const products = require('./products.json');
 
+const PORT = process.env.PORT || 4444;
+
 const app = express();
 
 app.use(express.static('public'));
@@ -42,6 +44,6 @@ app.get('/product/:productId', (req, res) => {
     });
 });
 
-app.listen(4444, () => {
-    console.log(`app running on port ${4444}`);
+app.listen(PORT, () => {
+    console.log(`app running on port ${PORT}`);
 });
